@@ -1,0 +1,51 @@
+{
+    "typeName": "Test::SSM::Invoke",
+    "description": "Example resource schema for SSM document run.",
+    "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+    "properties": {
+        "SSMDocumentName": {
+            "description": "Name of the SSM Document to be invoked.",
+            "type": "string",
+            "pattern": "^[A-Z]{3,5}[0-9]{8}-[0-9]{4}$"
+        },
+        "SSMDocumentVersion": {
+            "description": "Version of the SSM Document to be invoked.",
+            "type": "string",
+            "pattern": "^[A-Z]{3,5}[0-9]{8}-[0-9]{4}$"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SSMDocumentName"
+    ],
+    "primaryIdentifier": [
+        "/properties/SSMDocumentName"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "SSM:*"
+            ]
+        },
+        "read": {
+            "permissions": [
+               "SSM:*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "SSM:*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "SSM:*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "SSM:*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,48 @@
+[2020-02-14T03:51:15Z] DEBUG    - Logging set up successfully
+[2020-02-14T03:51:15Z] DEBUG    - Running init: Namespace(command=<function init at 0x1115a1050>, force=False, language=None, subparser_name='init', verbose=0, version=False)
+[2020-02-14T03:51:15Z] DEBUG    - Root directory: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider
+[2020-02-14T03:51:15Z] WARNING  - Initializing new project
+[2020-02-14T03:51:15Z] DEBUG    - Loading project file '/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/.rpdk-config'
+[2020-02-14T03:51:20Z] DEBUG    - Resource type identifier: Test::SSM::Invoke
+[2020-02-14T03:51:20Z] WARNING  - One language plugin found, defaulting to go
+[2020-02-14T03:51:20Z] DEBUG    - Language plugin: go
+[2020-02-14T03:51:20Z] DEBUG    - Init started
+[2020-02-14T03:51:28Z] DEBUG    - Writing .gitignore: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/.gitignore
+[2020-02-14T03:51:28Z] DEBUG    - Making source folder structure: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/cmd/resource
+[2020-02-14T03:51:28Z] DEBUG    - Writing Makefile: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/Makefile
+[2020-02-14T03:51:28Z] DEBUG    - Writing go.mod: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/go.mod
+[2020-02-14T03:51:28Z] DEBUG    - Writing SAM template: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/template.yml
+[2020-02-14T03:51:28Z] DEBUG    - Writing handlers and tests
+[2020-02-14T03:51:28Z] DEBUG    - Writing stub handlers
+[2020-02-14T03:51:28Z] DEBUG    - Writing README: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/README.md
+[2020-02-14T03:51:28Z] DEBUG    - Init complete
+[2020-02-14T03:51:28Z] DEBUG    - Overwriting '/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/.rpdk-config'
+[2020-02-14T03:51:28Z] DEBUG    - Writing Resource Role CloudFormation template: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/resource-role.yaml
+[2020-02-14T03:51:28Z] DEBUG    - Overwriting '/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/resource-role.yaml'
+[2020-02-14T03:51:28Z] DEBUG    - Generate started
+[2020-02-14T03:51:28Z] DEBUG    - Writing Types
+[2020-02-14T03:51:28Z] DEBUG    - Overwriting '/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/cmd/resource/model.go'
+[2020-02-14T03:51:28Z] DEBUG    - Writing project: /Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/cmd/main.go
+[2020-02-14T03:51:28Z] DEBUG    - Overwriting '/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/cmd/main.go'
+[2020-02-14T03:51:29Z] DEBUG    - Caught downstream error
+Traceback (most recent call last):
+  File "/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/env/lib/python3.7/site-packages/rpdk/go/codegen.py", line 166, in generate
+    subprocess_run(["go", "fmt", path], cwd=root, check=True)
+  File "/usr/local/Cellar/python/3.7.6_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 512, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['go', 'fmt', PosixPath('/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/testProvider/cmd/main.go')]' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/src/rpdk/core/cli.py", line 98, in main
+    args.command(args)
+  File "/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/src/rpdk/core/init.py", line 158, in wrapper
+    function(args)
+  File "/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/src/rpdk/core/init.py", line 149, in init
+    project.generate()
+  File "/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/src/rpdk/core/project.py", line 271, in generate
+    return self._plugin.generate(self)
+  File "/Users/senstb/Documents/CloudFormationCLI/cloudformation-cli/env/lib/python3.7/site-packages/rpdk/go/codegen.py", line 168, in generate
+    raise DownstreamError("go fmt failed") from e
+rpdk.core.exceptions.DownstreamError: go fmt failed
